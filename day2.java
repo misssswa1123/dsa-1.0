@@ -27,11 +27,21 @@ class day2{
          System.out.println(qu.poll());
       }
    }
+   //frequency count
+   public static void freqcount()
+   {
+      int arr[]={1,2,3,1,2,3,2,4,2,3};
+      HashMap<Integer,Integer> map=new HashMap<>();
+       for(Integer i:arr)
+       {
+         map.put(i,map.getOrDefault(i, 0)+1);
+       }
+      
+
+   }
    public static void main(String args[])
    {
-      System.out.println("Lifo");
-      lifo();
-      System.out.println("FIFO");
-      fifo();
+     
+      freqcount();
    }
 }
