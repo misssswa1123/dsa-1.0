@@ -1,6 +1,6 @@
 /*📅 DAY 1 – Basics (no pressure)
-🔹 Q1: Find Maximum in Array
-🔹 Q2: Count Frequency of Elements
+🔹 Q1: Find Maximum in Array-done
+🔹 Q2: Count Frequency of Elements-done
 🔹 Q3: Check Palindrome (String)  DAY 2 – Slightly better logic
 🔹 Q1: Reverse an Array
 🔹 Q2: Second Largest Element
@@ -64,15 +64,38 @@ public class arraybasics1{
             System.out.println(ar[j]);
         }
     }
+public static void findseclarge(int[] a)
+{
+    int large=a[0];
+    int secl=0;
+    for(int i=0;i<a.length;i++)
+    {
+        if(large<a[i])
+        {
+            secl=large;
+            large=a[i];
+        }
+        else if(secl<a[i] && a[i]!=large)
+        {
+            secl=a[i];
+        }
+    }
+    System.out.println("Second large="+secl);
 
-    public static void main(String args[])
+}
+public static void main(String args[])
     {
         int a[]={25,60,52,78,97,21};
+        findseclarge(a);
         int a1[]={1,1,3,3,1,4};
         String s="aba";
         System.out.println("Max="+maxfind(a));
         findfreqloop(a1);
         palistr(s);
         revarr(a);
+        int[] d={12,34,23,43,56};
+        int[] d1={25,60,52,78,97,21};
+        findseclarge(d1);
+        findseclarge(d);
     }
 }
